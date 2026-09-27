@@ -14,6 +14,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # allows index.html (opened as a separate file) to call this API
 
+@app.route("/", methods=["GET"])
+def default_route():
+    return "this is the default route"
 
 @app.route("/hello", methods=["GET"])
 def hello_get():
