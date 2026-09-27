@@ -8,7 +8,7 @@ Run with:
 The API will start at http://127.0.0.1:5000
 """
 
-from flask import Flask, request
+from flask import Flask, request,render_template_string
 from flask_cors import CORS
 
 app = Flask(__name__)
