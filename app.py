@@ -16,7 +16,33 @@ CORS(app)  # allows index.html (opened as a separate file) to call this API
 
 @app.route("/", methods=["GET"])
 def default_route():
-    return "this is the default route"
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Flask App</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+                background-color: #f4f4f9;
+                color: #333;
+            }
+            h1 {
+                color: #4CAF50;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello from Flask on Render! 🚀</h1>
+        <p>Your app is successfully up and running.</p>
+    </body>
+    </html>
+    """
+    return render_template_string(html_content)
 
 @app.route("/hello", methods=["GET"])
 def hello_get():
