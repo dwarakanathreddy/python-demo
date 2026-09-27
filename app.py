@@ -16,7 +16,7 @@ CORS(app)  # allows index.html (opened as a separate file) to call this API
 
 @app.route("/", methods=["GET"])
 def default_route():
-html_content = """
+    html_content = """
     <!DOCTYPE html>
     <html lang="en">
     <head>
